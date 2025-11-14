@@ -41,7 +41,7 @@ st.header("Interactive Analysis")
 
 # Sidebar filters
 st.sidebar.header("Filters")
-wind_directions = st.sidebar.multiselect("Wind Direction", df['Wind direction'].unique(), default=df['Wind direction'].unique())
+wind_directions = st.sidebar.multiselect("Wind Direction", df['Wind direction'].unique())
 if not wind_directions:
     wind_directions = df['Wind direction'].unique()
 
