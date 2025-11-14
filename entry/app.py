@@ -4,7 +4,7 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 
 # Load data
-df = pd.read_csv(r'C:\Users\duffyl\OneDrive - Arriva\Documents\repos\multiverse\data_analytics_hackathon\data\titan_tests.csv')
+df = pd.read_csv('data/titan_tests.csv')
 
 st.set_page_config(layout="wide")
 
