@@ -45,6 +45,11 @@ wind_directions = st.sidebar.multiselect("Wind Direction", df['Wind direction'].
 if not wind_directions:
     wind_directions = df['Wind direction'].unique()
 
+use_wind_filter = st.sidebar.checkbox("Filter by Wind Speed")
+if use_wind_filter:
+    wind_range = st.sidebar.slider("Wind Speed", float(df['Wind speed'].min()), float(df['Wind speed'].max()), 
+                                   (float(df['Wind speed'].min()), float(df['Wind speed'].max())))
+
 use_humidity_filter = st.sidebar.checkbox("Filter by Humidity", key="humidity_filter")
 if use_humidity_filter:
     humidity_range = st.sidebar.slider("Humidity", float(df['Humidity'].min()), float(df['Humidity'].max()), 
