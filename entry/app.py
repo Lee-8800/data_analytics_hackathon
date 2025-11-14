@@ -45,20 +45,16 @@ wind_directions = st.sidebar.multiselect("Wind Direction", df['Wind direction'].
 if not wind_directions:
     wind_directions = df['Wind direction'].unique()
 
-use_wind_filter = st.sidebar.checkbox("Filter by Wind Speed")
-if use_wind_filter:
-    wind_range = st.sidebar.slider("Wind Speed", float(df['Wind speed'].min()), float(df['Wind speed'].max()), 
-                                   (float(df['Wind speed'].min()), float(df['Wind speed'].max())))
-
-use_humidity_filter = st.sidebar.checkbox("Filter by Humidity")
+use_humidity_filter = st.sidebar.checkbox("Filter by Humidity", key="humidity_filter")
 if use_humidity_filter:
     humidity_range = st.sidebar.slider("Humidity", float(df['Humidity'].min()), float(df['Humidity'].max()), 
                                        (float(df['Humidity'].min()), float(df['Humidity'].max())))
 
-use_speed_filter = st.sidebar.checkbox("Filter by Average Speed")
+use_speed_filter = st.sidebar.checkbox("Filter by Average Speed", key="speed_filter")
 if use_speed_filter:
     speed_range = st.sidebar.slider("Average Speed", float(df['Average speed'].min()), float(df['Average speed'].max()), 
                                     (float(df['Average speed'].min()), float(df['Average speed'].max())))
+
 
 # Apply filters
 filtered_df = df[df['Wind direction'].isin(wind_directions)]
