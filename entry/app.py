@@ -135,7 +135,7 @@ with st.container(border=True):
                             color_discrete_sequence=model_colors,
                             hover_data=['Test ID', 'Emissions'],
                             title=f'{x_axis} vs {y_axis} by Model')
-    fig_scatter.update_traces(marker=dict(size=5))
+    fig_scatter.update_traces(marker=dict(size=10))
     st.plotly_chart(fig_scatter, use_container_width=True)
 
 expander = st.expander("Data")
